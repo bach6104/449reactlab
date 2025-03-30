@@ -1,6 +1,6 @@
 import Header from './components/Header'
 import Footer from './components/Footer'
-import ItemList from './components/Itemlist'
+import ItemList from './components/ItemList'
 import './App.css'
 
 function App() {
@@ -10,12 +10,14 @@ function App() {
     { id: 3, name: 'Netlify Hat', price: 19.99, inStock: true },
   ]
 
-  const showItems = items.length > 0
-
   return (
     <div className="App">
       <Header />
-      {showItems ? <ItemList items={items} /> : <p>No items available.</p>}
+      {items.length > 0 ? (
+        <ItemList items={items} />
+      ) : (
+        <p>No items available.</p>
+      )}
       <Footer />
     </div>
   )
